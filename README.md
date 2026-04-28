@@ -11,7 +11,7 @@ A rede de teste utilizada no deploy atual é a Sepolia.
 ```text
 Rede: Sepolia
 Chain ID: 11155111
-Deployer: 0x8F992da5D0Eec581145E31635Dc23cfc9e937851
+Deployer: 0xxxxxxxxxx
 Período de votação da governança: 60 segundos
 Price feed externo Chainlink ETH/USD: 0x694AA1769357215DE4FAC081bf1f309aDC325306
 ```
