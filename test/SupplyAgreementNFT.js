@@ -19,9 +19,7 @@ const { ethers } = require("hardhat");
  *      6. armazenamento correto dos dados da adesão
  *      7. retorno correto do tokenURI
  */
-
 describe("SupplyAgreementNFT", function () {
-  // Variáveis reutilizadas ao longo dos testes
   let SupplyAgreementNFT;
   let supplyAgreementNFT;
   let owner;
@@ -37,17 +35,13 @@ describe("SupplyAgreementNFT", function () {
    *      de teste novas, evitando interferência entre os casos.
    */
   beforeEach(async function () {
-    // Obtém contas de teste fornecidas pelo Hardhat
     [owner, marketplace, consumer, supplier, otherAccount] =
       await ethers.getSigners();
 
-    // Obtém a fábrica do contrato
     SupplyAgreementNFT = await ethers.getContractFactory("SupplyAgreementNFT");
 
-    // Faz o deploy do contrato com o owner inicial
     supplyAgreementNFT = await SupplyAgreementNFT.deploy(owner.address);
 
-    // Aguarda a conclusão do deploy
     await supplyAgreementNFT.waitForDeployment();
   });
 
@@ -83,23 +77,50 @@ describe("SupplyAgreementNFT", function () {
    */
   it("um endereço não autorizado não deve conseguir definir o marketplace", async function () {
     await expect(
-      supplyAgreementNFT.connect(otherAccount).setMarketplace(marketplace.address)
+      supplyAgreementNFT
+        .connect(otherAccount)
+        .setMarketplace(marketplace.address)
     ).to.be.reverted;
+  });
+
+  /**
+   * @notice Verifica se o mint falha quando o marketplace ainda não foi configurado.
+   *
+   * @dev Neste caso, a falha esperada é "Marketplace not set".
+   */
+  it("não deve permitir mint se o marketplace ainda não estiver configurado", async function () {
+    await expect(
+      supplyAgreementNFT
+        .connect(otherAccount)
+        .mintAgreement(
+          consumer.address,
+          supplier.address,
+          1,
+          "ipfs://metadata"
+        )
+    ).to.be.revertedWith("Marketplace not set");
   });
 
   /**
    * @notice Verifica se apenas o marketplace autorizado consegue cunhar NFTs.
    *
-   * @dev Um endereço não autorizado deve falhar ao tentar executar o mint.
+   * @dev Primeiro o marketplace é configurado. Depois, um endereço diferente
+   *      tenta executar o mint e deve falhar com "Only marketplace".
    */
   it("um endereço não autorizado não deve conseguir cunhar NFTs", async function () {
+    await supplyAgreementNFT
+      .connect(owner)
+      .setMarketplace(marketplace.address);
+
     await expect(
-      supplyAgreementNFT.connect(otherAccount).mintAgreement(
-        consumer.address,
-        supplier.address,
-        1,
-        "ipfs://metadata-1"
-      )
+      supplyAgreementNFT
+        .connect(otherAccount)
+        .mintAgreement(
+          consumer.address,
+          supplier.address,
+          1,
+          "ipfs://metadata"
+        )
     ).to.be.revertedWith("Only marketplace");
   });
 
@@ -113,22 +134,19 @@ describe("SupplyAgreementNFT", function () {
    *      3. armazenamento da tokenURI
    */
   it("o marketplace autorizado deve conseguir cunhar um NFT", async function () {
-    // Owner define o marketplace autorizado
     await supplyAgreementNFT.setMarketplace(marketplace.address);
 
-    // Marketplace cunha o NFT
-    await supplyAgreementNFT.connect(marketplace).mintAgreement(
-      consumer.address,
-      supplier.address,
-      1,
-      "ipfs://metadata-1"
-    );
+    await supplyAgreementNFT
+      .connect(marketplace)
+      .mintAgreement(
+        consumer.address,
+        supplier.address,
+        1,
+        "ipfs://metadata-1"
+      );
 
-    // Como o primeiro NFT cunhado recebe tokenId = 1,
-    // o owner do token 1 deve ser o consumidor
     expect(await supplyAgreementNFT.ownerOf(1)).to.equal(consumer.address);
 
-    // A URI do token 1 deve ser a mesma informada no mint
     expect(await supplyAgreementNFT.tokenURI(1)).to.equal("ipfs://metadata-1");
   });
 
@@ -136,18 +154,17 @@ describe("SupplyAgreementNFT", function () {
    * @notice Verifica se os dados da adesão foram armazenados corretamente.
    */
   it("deve armazenar corretamente os dados da adesão", async function () {
-    // Owner define o marketplace autorizado
     await supplyAgreementNFT.setMarketplace(marketplace.address);
 
-    // Cunha um NFT representando uma adesão
-    await supplyAgreementNFT.connect(marketplace).mintAgreement(
-      consumer.address,
-      supplier.address,
-      42,
-      "ipfs://agreement-42"
-    );
+    await supplyAgreementNFT
+      .connect(marketplace)
+      .mintAgreement(
+        consumer.address,
+        supplier.address,
+        42,
+        "ipfs://agreement-42"
+      );
 
-    // Recupera os dados associados ao tokenId 1
     const agreementData = await supplyAgreementNFT.getAgreementData(1);
 
     expect(agreementData.offerId).to.equal(42);
@@ -155,7 +172,6 @@ describe("SupplyAgreementNFT", function () {
     expect(agreementData.consumer).to.equal(consumer.address);
     expect(agreementData.metadataURI).to.equal("ipfs://agreement-42");
 
-    // Verifica se houve registro de timestamp válido
     expect(agreementData.acceptedAt).to.be.gt(0);
   });
 
@@ -165,19 +181,23 @@ describe("SupplyAgreementNFT", function () {
   it("deve incrementar corretamente os tokenIds", async function () {
     await supplyAgreementNFT.setMarketplace(marketplace.address);
 
-    await supplyAgreementNFT.connect(marketplace).mintAgreement(
-      consumer.address,
-      supplier.address,
-      1,
-      "ipfs://metadata-1"
-    );
+    await supplyAgreementNFT
+      .connect(marketplace)
+      .mintAgreement(
+        consumer.address,
+        supplier.address,
+        1,
+        "ipfs://metadata-1"
+      );
 
-    await supplyAgreementNFT.connect(marketplace).mintAgreement(
-      consumer.address,
-      supplier.address,
-      2,
-      "ipfs://metadata-2"
-    );
+    await supplyAgreementNFT
+      .connect(marketplace)
+      .mintAgreement(
+        consumer.address,
+        supplier.address,
+        2,
+        "ipfs://metadata-2"
+      );
 
     expect(await supplyAgreementNFT.nextTokenId()).to.equal(2);
     expect(await supplyAgreementNFT.ownerOf(1)).to.equal(consumer.address);
