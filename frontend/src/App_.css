@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.login-page,
+.internal-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card,
+.panel-card {
+  width: 100%;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.login-card {
+  max-width: 420px;
+}
+
+.internal-layout {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 900px) {
+  .internal-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.subtitle {
+  color: #556070;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.login-form input {
+  padding: 10px 12px;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #1f6feb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #1859be;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.error-text {
+  color: #b00020;
+  margin-top: 12px;
+}
+
+.login-help {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f7f9fb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-help p {
+  margin: 4px 0;
+}
+
+.info-block {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f7f9fb;
+  border-radius: 8px;
+}
+
+.panel-flash-success {
+  outline: 2px solid #22c55e;
+  transition: outline 0.2s ease-in-out;
+}
+
+.status-yes {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.status-no {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.panel-card h1 {
+  color: #0f172a;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.panel-card h2 {
+  color: #14213d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.panel-card h3 {
+  color: #1f2937;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}

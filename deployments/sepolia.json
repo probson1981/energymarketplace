@@ -1,0 +1,48 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployer": "0x8F992da5D0Eec581145E31635Dc23cfc9e937851",
+  "EnergyToken": "0x2502d50e6F8De55479d1D2cB33F55e4e496Cde3d",
+  "SupplyAgreementNFT": "0x9cD75D2F2cf42d5a8A81993c9B0F0f2C2BA9AD84",
+  "SupplierRegistry": "0x87F265CE0e08F1E1a7dbFE1A0f0338CC3d88C3c0",
+  "ConsumerRegistry": "0x8DdB5CC32171C526c4D79347D5291471b2903619",
+  "SupplierCollateral": "0xa117f2690281f124ba501011959d60D72D241089",
+  "MockPriceFeed": null,
+  "ExternalPriceFeed": "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+  "OracleAdapter": "0xFbE5f4C5da2331c76d70f2144A1ad5146a9C0A5A",
+  "SupplierStaking": "0xe8A4670601e7F5d8d6Dd558f45353E655BFB4142",
+  "EnergyMarketplace": "0x32aEf9A17A8E110bAEAB2BafceA16E6B8a7Fe46C",
+  "EnergyGovernance": "0x6dA6Eb5c4617d33A38Bf6E913Ac3745DEC91ED5d",
+  "MarketplaceTreasury": "0x9B41e8F8093Ee70098C3eF9a4314A901D23d10Ba",
+  "parameters": {
+    "initialMinimumCollateral": "10000000000000000000",
+    "initialVotingPeriod": "60",
+    "tokenPerEth": "10000000000000000000000",
+    "initialTreasuryReserve": "1000000000000000000000000",
+    "useMockPriceFeed": false,
+    "mockPrice": null,
+    "mockDecimals": null
+  },
+  "explorer": {
+    "EnergyToken": "https://sepolia.etherscan.io/address/0x2502d50e6F8De55479d1D2cB33F55e4e496Cde3d",
+    "SupplyAgreementNFT": "https://sepolia.etherscan.io/address/0x9cD75D2F2cf42d5a8A81993c9B0F0f2C2BA9AD84",
+    "SupplierRegistry": "https://sepolia.etherscan.io/address/0x87F265CE0e08F1E1a7dbFE1A0f0338CC3d88C3c0",
+    "ConsumerRegistry": "https://sepolia.etherscan.io/address/0x8DdB5CC32171C526c4D79347D5291471b2903619",
+    "SupplierCollateral": "https://sepolia.etherscan.io/address/0xa117f2690281f124ba501011959d60D72D241089",
+    "MockPriceFeed": null,
+    "ExternalPriceFeed": "https://sepolia.etherscan.io/address/0x694AA1769357215DE4FAC081bf1f309aDC325306",
+    "OracleAdapter": "https://sepolia.etherscan.io/address/0xFbE5f4C5da2331c76d70f2144A1ad5146a9C0A5A",
+    "SupplierStaking": "https://sepolia.etherscan.io/address/0xe8A4670601e7F5d8d6Dd558f45353E655BFB4142",
+    "EnergyMarketplace": "https://sepolia.etherscan.io/address/0x32aEf9A17A8E110bAEAB2BafceA16E6B8a7Fe46C",
+    "EnergyGovernance": "https://sepolia.etherscan.io/address/0x6dA6Eb5c4617d33A38Bf6E913Ac3745DEC91ED5d",
+    "MarketplaceTreasury": "https://sepolia.etherscan.io/address/0x9B41e8F8093Ee70098C3eF9a4314A901D23d10Ba"
+  },
+  "updatedAt": "2026-04-27T23:40:02.702Z",
+  "setup": {
+    "NFT_marketplace": "0x32aEf9A17A8E110bAEAB2BafceA16E6B8a7Fe46C",
+    "Collateral_governance": "0x6dA6Eb5c4617d33A38Bf6E913Ac3745DEC91ED5d",
+    "Staking_governance": "0x6dA6Eb5c4617d33A38Bf6E913Ac3745DEC91ED5d",
+    "setupBy": "0x8F992da5D0Eec581145E31635Dc23cfc9e937851",
+    "setupAt": "2026-04-27T23:40:37.530Z"
+  }
+}

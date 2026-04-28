@@ -1,0 +1,90 @@
+{
+  "network": "localhost",
+  "generatedAt": "2026-04-13T01:17:32.338Z",
+  "owner": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "walletCount": 10,
+  "ethAmountPerWallet": "100000000000000000000",
+  "tokenAmountPerWallet": "5000",
+  "wallets": [
+    {
+      "index": 1,
+      "address": "0x11F206985BDFf27003c8f34c25C944b56487bB64",
+      "privateKey": "0x05e22e3bffd645c7f41407392b35009b34837c78dd0c22763e1cee460ec4d4c1",
+      "mnemonic": "already pear impact bag sketch pair leisure hamster chicken food tent mosquito",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 2,
+      "address": "0x0Cdea92399E2fD9b25341542a2fbba73e8A09eF1",
+      "privateKey": "0xd6b1a8b7215ce3eeb1872d9766e4429ab0793ffa8ba8bd8179239efe22bd51c1",
+      "mnemonic": "typical morning drill spider coyote ritual approve fan amount during fruit lock",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 3,
+      "address": "0x2e3175dC2A8B56C9c7753fdae44087A35FBa1611",
+      "privateKey": "0xb3d69dfc8516f18865cedb79e0db44a651f09e601af0a87d5260d375949ce6be",
+      "mnemonic": "leg key update scout guitar goddess cover recall borrow auto head cool",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 4,
+      "address": "0xbC9e0d0241FBf9Ace6DA1fC360808453546BeF60",
+      "privateKey": "0x540d429563ad68d0f65b68081bed54ed7f88466e94f7b73bbbb6b84706ace527",
+      "mnemonic": "time quick choice egg cloud move enemy tone stamp more ill envelope",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 5,
+      "address": "0xeFa2718cB282f1dcCD80F7191ad0Da296DA55b20",
+      "privateKey": "0xa393a987246edf761c9022421c3a8c24b093fdbc67f7aea76876c073f0fce433",
+      "mnemonic": "frame angle another blush strong another item citizen enhance desk sing million",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 6,
+      "address": "0xFa50BFcefB1813bA57a548CE702ed66d6583f50a",
+      "privateKey": "0x9681566dd3686368b46225e70f666e018375eed2417cd689a3cdb4637dfb792c",
+      "mnemonic": "defense accident found sun diet clerk minor success behind screen pink below",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 7,
+      "address": "0xB555f3C83f9b6022011E73051833DF624d79d344",
+      "privateKey": "0x0cae444a6dc6557a1a79b747f8562fb7cc4577180d16f30469bc2d6846a573ac",
+      "mnemonic": "lava keep alpha sleep abstract inside pretty zone gas void divide pool",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 8,
+      "address": "0x2B88d4b5F931e0c0c7354B64930302edCbdCb9f1",
+      "privateKey": "0xa5c889adbeca7a001a8218d02d2c3e44d0c2e822a1c1d0ff59af6e0a3b94f50a",
+      "mnemonic": "start refuse car scatter attend true analyst purity pistol tornado sport globe",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 9,
+      "address": "0x3f714EeB5550C1E949Cd13a4C005d7c9e9a06E50",
+      "privateKey": "0x99989a0af99e4218469d34e355d7e9e0817a93bb2ca4caeadf58adb2505a2b9d",
+      "mnemonic": "resist promote sudden fall during produce history wheel cabin immense roof bird",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    },
+    {
+      "index": 10,
+      "address": "0xD2f54907a6858e9e3B88FCF7251a6a062B09C7c5",
+      "privateKey": "0x0b9e03121c6f26d872e19fdf8542fa1f242265882a3425544a8fa5ae5ec6d66d",
+      "mnemonic": "snack enable shrug medal gold destroy diamond muffin train check funny woman",
+      "ethBalance": "100000000000000000000",
+      "tokenBalance": "5000"
+    }
+  ]
+}
